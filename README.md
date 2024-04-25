@@ -5,7 +5,11 @@ Authors: [Jhon A. Castro-Correa](https://www.eecis.udel.edu/~jcastro/), [Jhony H
 
 ---
 
-![Pipeline](./assets/pipeline.png)
+<div align="center">
+    <a href="./">
+        <img src="./assets/pipeline.png" width="95%" alt="Pipeline"/>
+    </a>
+</div>
 
 ---
 
