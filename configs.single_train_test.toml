@@ -24,9 +24,7 @@ output_folder = 'results'
 # Dataset path 
 data_folder = 'data'
 
-# dataset = 'sw06_experiment'
-# dataset = 'sea_surface_temperature'
-dataset = 'syn_graph_signal'
+dataset = 'sea_surface_temperature'
 # dataset = 'pm25_concentration'
 # dataset = 'intel_dataset'
 
