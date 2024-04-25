@@ -56,7 +56,7 @@ This will do everything as outlined in the previous section.
 if you use our code, please consider citing our work:
 
 ```bibtex
-@ARTICLE{10496245,
+@ARTICLE{gegenconv2024,
   author={Castro-Correa, Jhon A. and Giraldo, Jhony H. and Badiey, Mohsen and Malliaros, Fragkiskos D.},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 
   title={Gegenbauer Graph Neural Networks for Time-Varying Signal Reconstruction}, 
@@ -69,7 +69,7 @@ if you use our code, please consider citing our work:
 ```
 
 ```bibtex
-@INPROCEEDINGS{10096168,
+@INPROCEEDINGS{timegnn2023,
   author={Castro-Correa, Jhon A. and Giraldo, Jhony H. and Mondal, Anindya and Badiey, Mohsen and Bouwmans, Thierry and Malliaros, Fragkiskos D.},
   booktitle={ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
   title={Time-Varying Signals Recovery Via Graph Neural Networks}, 
