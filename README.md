@@ -48,15 +48,12 @@ With the requirements installed, the scripts are ready to run and  used. Make a 
 python3 filename.py -f [YOUR_SETTINGS.TOML]
 ```
 
-This will do everything as outlined in the previous section.
-
-
 ## Credits
 
 if you use our code, please consider citing our work:
 
 ```bibtex
-@ARTICLE{gegenconv2024,
+@Article{gegenconv2024,
   author={Castro-Correa, Jhon A. and Giraldo, Jhony H. and Badiey, Mohsen and Malliaros, Fragkiskos D.},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 
   title={Gegenbauer Graph Neural Networks for Time-Varying Signal Reconstruction}, 
@@ -69,7 +66,7 @@ if you use our code, please consider citing our work:
 ```
 
 ```bibtex
-@INPROCEEDINGS{timegnn2023,
+@Inproceedings{timegnn2023,
   author={Castro-Correa, Jhon A. and Giraldo, Jhony H. and Mondal, Anindya and Badiey, Mohsen and Bouwmans, Thierry and Malliaros, Fragkiskos D.},
   booktitle={ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
   title={Time-Varying Signals Recovery Via Graph Neural Networks}, 
