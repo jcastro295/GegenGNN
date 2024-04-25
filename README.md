@@ -5,7 +5,7 @@ Authors: [Jhon A. Castro-Correa](https://www.eecis.udel.edu/~jcastro/), [Jhony H
 
 ---
 
-![Pipeline](assets/pipeline.png)
+![Pipeline](./assets/pipeline.png)
 
 ---
 
