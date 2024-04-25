@@ -1,9 +1,15 @@
 # GegenConv
-This repository contains the code for [Gegenbauer Graph Neural Networks for Time-varying Signal Reconstruction](https://doi.org/10.1109/TNNLS.2024.3381069) oublished at the Transaction of Neural Networks and Learning Systems (TNNLS).
+This repository contains the code for [Gegenbauer Graph Neural Networks for Time-varying Signal Reconstruction](https://doi.org/10.1109/TNNLS.2024.3381069) published at the Transaction of Neural Networks and Learning Systems (TNNLS).
 
+Authors: [Jhon A. Castro-Correa](https://www.eecis.udel.edu/~jcastro/), [Jhony H Giraldo](https://sites.google.com/view/jhonygiraldo), [Mohsen Badiey](https://www.eecis.udel.edu/~badiey/), [Fragkiskos D. Malliaross](https://fragkiskos.me)
+
+---
+
+![Pipeline](assets/pipeline.png)
+
+---
 
 ## Getting started
-
 
 ### Create a virtual environment
 If you have Python's `virtualenv` package installed (through `apt` on Ubuntu), you can make a virtual environment via the following:
@@ -30,11 +36,17 @@ conda activate [myenv]
 # this should give a nice `([name])` at the beginning of each terminal line
 ```
 
+### Clone this repository
+
+```bash
+git clone https://github.com/jcastro295/GegenGNN.git  
+```
+
 ### Prerequisites
 
 Our code requires Python >= 3.10.
 
-You also need these additional packages listed in the [requirements.txt](requirements.txt) file. You can install the requirements using:
+You also need the additional packages listed in the [requirements.txt](requirements.txt) file. You can install the requirements using:
 
 ```bash
 pip install -r requirements.txt
@@ -45,7 +57,7 @@ pip install -r requirements.txt
 With the requirements installed, the scripts are ready to run and  used. Make a **copy** of the `settings.file.toml` file. Then edit the copy with your desired settings. Then you can run the script by calling the following:
 
 ```bash
-python3 filename.py -f [YOUR_SETTINGS.TOML]
+python3 [filename.py] -f [YOUR_SETTINGS.TOML]
 ```
 
 ## Credits
