@@ -56,7 +56,7 @@ You also need the additional packages listed in the [requirements.txt](requireme
 pip install -r requirements.txt
 ```
 
-## Run the code 
+### Run the code 
 
 With the requirements installed, the scripts are ready to run and  used. Make a **copy** of the `settings.file.toml` file. Then edit the copy with your desired settings. Then you can run the script by calling the following:
 
@@ -64,7 +64,7 @@ With the requirements installed, the scripts are ready to run and  used. Make a 
 python3 [filename.py] -f [YOUR_SETTINGS.TOML]
 ```
 
-## Credits
+## Citation
 
 if you use our code, please consider citing our work:
 
@@ -94,6 +94,6 @@ if you use our code, please consider citing our work:
   doi={10.1109/ICASSP49357.2023.10096168}}
 ```
 
-### Contact: 
+## Contact: 
 
 For any query, please contact me at: <jcastro@udel.edu>
