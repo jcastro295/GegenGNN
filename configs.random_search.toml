@@ -1,0 +1,202 @@
+###################################################
+# -------------------------------------------------
+#           configs_random_search.toml
+# -------------------------------------------------
+# 
+# Configuration file for Cross-validation training
+#
+###################################################
+
+
+# Run name
+run_name = 'gegen_cv_m01'
+
+# Run details (optional)
+run_description = """
+Cross-validation
+"""
+
+# Output folder to save results
+output_folder = 'results_cv'
+
+# Dataset path 
+data_folder = 'data'
+
+dataset = 'sw06_experiment'
+# dataset = 'sea_surface_temperature'
+# dataset = 'syn_graph_signal'
+# dataset = 'pm25_concentration'
+# dataset = 'intel_dataset'
+
+# gpu to use (if available)
+gpu = 0
+
+# Cuda setting
+no_cuda = false
+
+
+[preprocessing]
+
+# sampling density
+sampling_density = 0.1
+
+# data normalization
+# 'none' : no normalization
+# 'minmax' : calls sklearn.preprocessing.MinMaxScaler
+# 'standard' : calls sklearn.preprocessing.StandardScaler
+# 'robust' : calls sklearn.preprocessing.RobustScaler
+normalization = 'none'
+
+# neighbor normalization from `hdla-gcn`
+# deep Neural Message Passing With Hierarchical Layer Aggregation and Neighbor Normalization
+layer_normalization = "neighbornorm"
+
+
+[reproducibility]
+
+# Development seed
+dev_seed = 1684992425
+
+# Validation seeds
+val_seeds = [4258031807, 3829679737]
+
+# Testing seeds
+test_seeds = [
+    2406525885, 3164031153, 1454191016, 1583215992, 765984986
+]
+
+
+[training]
+
+# Number of runs for random search
+n_runs = 10
+
+# validation size 
+# a value between (0-1) representing a percentage
+# Minimum value is 0.1
+validation_size = 0.3
+
+# Epochs to save checkpoint
+save_checkpoint = true
+
+
+[training.model]
+# model to train
+# `gegen`, `gegenbauer`, `gegenconv`
+# `cheby`, `chebyshev`, `chebyconv`
+# `gcn`, `gcnnet`
+# `gat`, `gatnet`
+# `transformer`, `transformernet`
+# `hdla`, `gcnhdla`, `gcn-hdla`
+# `ffk`, `ffkgcnii`, 'ffk-gcnii'
+# `mr`, `mrgnn`, `mr-gnn`
+model = 'gegen'
+
+# model kwargs
+model_kwargs = {}
+
+
+[training.logging]
+# verbose
+verbose = {train=true, val=false}
+
+
+[hparams]
+
+# Range for initial learning rate
+# A value will be randomly sampled from the interval [lr_min, lr_max]
+lr = [0.005, 0.05]
+
+# perturbation for Laplacian 
+epsilon = [0.01, 0.05]
+
+# Range for filter order
+filter_order = [1, 5]
+
+# Range for alpha
+alpha = [-0.5, 2.0]
+
+# Range for heads
+heads = [1, 4]
+
+# Maximum number of epochs to train
+# A value will be randomly chosen from the list
+epochs = [50]
+
+# Range for dropout rate (1 - keep probability)
+# A value will be randomly sampled from the interval [dropout_min, dropout_max]
+dropout = [0.0, 0.5]
+
+# max_k parameter from:
+# - Multiresolution Reservoir Graph Neural Network 'mr-gnn'
+# or k parameter for normalization trick in `ffk-gcn`
+# - Graph Neural Networks With High-Order Polynomial Spectral Filters `ffk-gcn`
+k = [1, 1]
+
+# gamma parameter for normalization trick in `ffk-gcn`
+# - Graph Neural Networks With High-Order Polynomial Spectral Filters `ffk-gcn`
+gamma_norm = [1.0, 1.0]
+
+# output parameter from - Multiresolution Reservoir Graph Neural Network
+# 0 : 'funnel'
+# 1 : 'one_layer'
+# 2 : 'restricted_funnel'
+output = [0, 2]
+
+[hparams.reg]
+# Range for the regularization parameter for the Laplacian
+# A value will be randomly sampled from the interval [lambda_min, lambda_max]
+lambda_param = [1e-6, 1e-3]
+
+
+[hparams.layers]
+# Range for number of layers
+# A value will be randomly sampled from the interval [n_layers_min, n_layers_max]
+n_conv_layers = [1, 6]
+# Range for number of hidden units
+# A value will be randomly sampled from the interval [n_hidden_min, n_hidden_max]
+n_conv_hidden = [2, 10]
+
+# Range for number of layers
+# A value will be randomly sampled from the interval [n_layers_min, n_layers_max]
+n_linear_layers = [0, 5]
+
+# Range for number of hidden units
+# A value will be randomly sampled from the interval [n_hidden_min, n_hidden_max]
+n_linear_hidden = [2, 20]
+
+[hparams.optim]
+# Optimizer
+# Set optimizer and **kwargs
+# Check documentation for specific **kwargs
+# https://pytorch.org/docs/stable/optim.html 
+# 'adam'
+# 'adamw'
+# 'sgd'
+# 'adamax'
+optim = 'adam'
+# Range for weight decay (L2 loss on parameters)
+# A value will be randomly sampled from the interval [weight_decay_min, weight_decay_max]
+weight_decay = [1e-5, 1e-3]
+optim_kwargs = {}
+
+[hparams.lr_scheduler]
+# Learning rate type and **kwargs
+# Check documentation for specific **kwargs
+# https://pytorch.org/docs/stable/optim.html 
+# 'none' : No scheduler
+# 'cosine' : `CosineAnnealingLR`
+# 'exponential' : `ExponentialLR`
+# 'step' : `StepLR`
+# 'plateau' : `ReduceLROnPlateau`
+# 'none'
+lr_scheduler = 'plateau'
+lr_scheduler_kwargs = {mode = 'min', factor = 0.5, patience = 250, min_lr = 1e-3}
+
+[hparams.criterion]
+# Select the metric and **kwargs
+# 'crossentropy' : `nn.CrossEntropyLoss`
+# 'mse' : `nn.MSELoss`
+# 'l1' : `nn.L1Loss`
+criterion = 'mse'
+criterion_kwargs = {reduction = 'mean'}
