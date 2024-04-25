@@ -7,7 +7,7 @@ Authors: [Jhon A. Castro-Correa](https://www.eecis.udel.edu/~jcastro/), [Jhony H
 
 <div align="center">
     <a href="./">
-        <img src="./assets/pipeline.png" width="95%" alt="Pipeline"/>
+        <img src="./assets/Pipeline.png" width="95%" alt="Pipeline"/>
     </a>
 </div>
 
