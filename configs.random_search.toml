@@ -53,15 +53,13 @@ layer_normalization = "neighbornorm"
 [reproducibility]
 
 # Development seed
-dev_seed = 1684992425
+dev_seed = 0
 
 # Validation seeds
-val_seeds = [4258031807, 3829679737]
+val_seeds = [1, 2]
 
 # Testing seeds
-test_seeds = [
-    2406525885, 3164031153, 1454191016, 1583215992, 765984986
-]
+test_seeds = [3, 4, 5, 6, 7]
 
 
 [training]
